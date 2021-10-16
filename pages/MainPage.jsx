@@ -87,6 +87,11 @@ class MainPage extends React.Component {
     });
     this._get();
   }
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.words != this.state.words) {
+      this._get();
+    }
+  }
   
   //아이디,이름 검색 switch
   onchangeCata() {
