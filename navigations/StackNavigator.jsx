@@ -47,7 +47,6 @@ const StackNavigator = () => {
       <Stack.Screen name="CalendarPage" component={CalendarPage} />
       <Stack.Screen name="ChatPage" component={ChatPage} />
       <Stack.Screen name="FaceChatPage" component={ChatPage} />
-      <Stack.Screen name="MainPage" component={MainPage} />
       <Stack.Screen name="FriendAddPage" component={FriendAddPage} />
     </Stack.Navigator>
   );
