@@ -10,34 +10,28 @@ import {
   ScrollView,
   Button,
   TextInput,
-  StatusBar
+  StatusBar,
+  TouchableOpacity,
+  Touchable,
 } from 'react-native';
 import { Col, Row, Grid } from 'react-native-easy-grid';
-import {
-  Container,
-  Header,
-  Content,
-  Left,
-  Icon,
-  Right,
-  Text,
-  
-} from 'native-base';
-import user from '../assets/user';
+import { Container, Header, Content, Left, Right, Text } from 'native-base';
+import Icon from 'react-native-vector-icons/AntDesign';
+import Constants from 'expo-constants';
 
-const databaseURL = "https://active-tome-322009-default-rtdb.firebaseio.com/";
+const databaseURL = 'https://friendadd-72871-default-rtdb.firebaseio.com/';
 
 class MainPage extends React.Component {
   constructor() {
     super();
     this.state = {
       words: {},
-      inputword: "",
-      showing: "비활성",
-      showingbool: false,
-      searchCata: "이름",
+      inputword: '',
+      showing: '비활성',
+      showingbool: true,
+      searchCata: '이름',
       searchCatabool: false,
-      username:"한이음"
+      username: 'name',
     };
   }
 
@@ -66,7 +60,7 @@ class MainPage extends React.Component {
   //해당 data를 list에서 삭제
   _delete(id) {
     return fetch(`${databaseURL}/words/${id}.json`, {
-      method: "DELETE",
+      method: 'DELETE',
     })
       .then((res) => {
         if (res.status != 200) {
@@ -92,22 +86,22 @@ class MainPage extends React.Component {
       this._get();
     }
   }
-  
+
   //아이디,이름 검색 switch
   onchangeCata() {
-    if (this.state.searchCata == "아이디") {
-      this.setState({ searchCata: "이름" });
+    if (this.state.searchCata == '아이디') {
+      this.setState({ searchCata: '이름' });
     } else {
-      this.setState({ searchCata: "아이디" });
+      this.setState({ searchCata: '아이디' });
     }
   }
   //검색창 활성,비활성
   onshowinput() {
     const { showingbool } = this.state;
-    if (this.state.showing == "비활성") {
-      this.setState({ showing: "활성" });
+    if (this.state.showing == '비활성') {
+      this.setState({ showing: '활성' });
     } else {
-      this.setState({ showing: "비활성" });
+      this.setState({ showing: '비활성' });
     }
     this.setState({ showingbool: !showingbool });
   }
@@ -115,80 +109,144 @@ class MainPage extends React.Component {
   render() {
     const { inputword, showingbool } = this.state;
     //{map.userimage}로 받은 이미지 대체
-    const userimage = { uri: "https://reactnative.dev/img/tiny_logo.png" };
+    const userimage = { uri: 'https://reactnative.dev/img/tiny_logo.png' };
     return (
-      <SafeAreaView>
-        <View style={styles.row}>
-          {showingbool && (
-            <TextInput
-              value={inputword}
-              onChangeText={(text) => {
-                this.setState({ inputword: text });
-              }}
-              style={{ height: 40 }}
-              placeholder="입력하시오"
-            />
-          )}
-          <Text>
-            <Button
-              title={this.state.searchCata}
-              onPress={() => {
-                this.onchangeCata();
-              }}
-            ></Button>
-            <Button
-              title={this.state.showing}
-              onPress={() => {
-                this.onshowinput();
-              }}
-            ></Button>
-            <Button
-              title="검색"
-              onPress={() => {
-                if (inputword == "") {
-                  return Alert.alert("주의", "검색할 친구를입력하시오", [
-                    { text: "OK", onPress: () => console.log("OK Pressed") },
-                  ]);
-                }
-                this.setState({ inputword: "" });
-                this.props.navigation.navigate("FriendAddPage", {
-                  inputword: inputword,
-                  searchCata: this.state.searchCata,
-                });
-              }}
-            />
-          </Text>
+      <SafeAreaView
+        style={{
+          paddingTop: Constants.statusBarHeight,
+          paddingBottom: 40,
+        }}
+      >
+        <View>
+          <View
+            style={[
+              {
+                backgroundColor: '#FFEB99',
+                padding: 12,
+                flexDirection: 'row',
+                alignItems: 'center',
+              },
+            ]}
+          >
+            <TouchableOpacity style={{ marginRight: 30 }}>
+              <Icon name="bars" size={30} color="#black" />
+            </TouchableOpacity>
+            {showingbool && (
+              <>
+                <>
+                  <Icon name="user" size={20} color="grey" />
+                  <TextInput
+                    value={inputword}
+                    onChangeText={(text) => {
+                      this.setState({ inputword: text });
+                    }}
+                    style={{
+                      height: 30,
+                      paddingLeft: 10,
+                      paddingRight: 10,
+                      borderColor: 'grey',
+                      borderRadius: 10,
+                      color: 'grey',
+                    }}
+                    placeholder="이름/아이디를 입력하시오"
+                  />
+                </>
+                <TouchableOpacity
+                  style={{
+                    borderRadius: 10,
+                    padding: 5,
+                  }}
+                  onPress={() => {
+                    if (inputword == '') {
+                      return Alert.alert('주의', '검색할 친구를입력하시오', [
+                        {
+                          text: 'OK',
+                          onPress: () => console.log('OK Pressed'),
+                        },
+                      ]);
+                    }
+                    this.setState({ inputword: '' });
+                    this.props.navigation.navigate('FriendAddPage', {
+                      inputword: inputword,
+                      searchCata: this.state.searchCata,
+                    });
+                  }}
+                >
+                  <Text style={{ color: 'white', fontSize: 10 }}>search</Text>
+                </TouchableOpacity>
+              </>
+            )}
+            <View style={styles.iconposition}>
+              <TouchableOpacity>
+                <Icon name="bells" size={30} color="#black" />
+              </TouchableOpacity>
+              <TouchableOpacity style={{ marginLeft: 3 }}>
+                <Icon
+                  name="search1"
+                  size={30}
+                  color="black"
+                  onPress={() => this.onshowinput()}
+                />
+              </TouchableOpacity>
+            </View>
+          </View>
         </View>
-        <View style={styles.row}>
+        <View style={[styles.listcontainer, styles.profile]}>
           <Image
-            style={styles.tinyLogo}
-            source={{ uri: "https://reactnative.dev/img/tiny_logo.png" }}
+            style={[styles.imagestyle, { borderWidth: 2 }]}
+            source={userimage}
           />
-            <Text >{this.state.username}</Text>
+          <View>
+            <Text>name</Text>
+            <Text>상태메세지</Text>
+          </View>
         </View>
-        <Text>친구 리스트</Text>
+        <Text style={{ paddingLeft: 10 }}>친구 </Text>
+        <View style={styles.underlinestyle} />
         <ScrollView>
           {Object.keys(this.state.words).map((id) => {
             const word = this.state.words[id];
             return (
               <View key={id}>
-                <Text>
-                  <Image style={{ width: 30, height: 30 }} source={userimage} />
+                <View style={styles.row}>
+                  <Image
+                    style={[styles.imagestyle, { borderWidth: 2 }]}
+                    source={userimage}
+                  />
                   <Button
-                    title="삭제"
+                    title="delete"
                     onPress={() => {
                       this._delete(id);
                     }}
                   ></Button>
-                  <Text>name : {word.name}</Text>
-                  // <Text>id : {word.id}</Text>
-                  <Button title="전화" onPress={()=>{
-                    this.props.navigation.navigate("FaceChatPage");
-                  }}></Button>
-                  <Button title="문자" onPress={()=>{
-                    this.props.navigation.navigate("ChatPage");
-                  }}></Button>
-                </Text>
+                  <View>
+                    <Text>{word.name}</Text>
+                    <Text>상태메세지</Text>
+                  </View>
+                  <View style={styles.iconposition}>
+                    <TouchableOpacity>
+                      <Icon
+                        name="phone"
+                        size={30}
+                        color="#black"
+                        onPress={() => {
+                          this.props.navigation.navigate('FaceChatPage');
+                        }}
+                      />
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.iconaling}>
+                      <Icon
+                        name="message1"
+                        size={30}
+                        color="#black"
+                        onPress={() => {
+                          this.props.navigation.navigate('ChatPage');
+                        }}
+                      />
+                    </TouchableOpacity>
+                  </View>
+                </View>
+                <View style={styles.underlinestyle} />
               </View>
             );
           })}
@@ -208,12 +266,63 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   row: {
-    flexDirection: "row",
-    flexWrap: "wrap",
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    margin: 5,
   },
   tinyLogo: {
     width: 50,
     height: 50,
   },
+  container: {
+    flex: 1,
+    backgroundColor: '#ecf0f1',
+    padding: 8,
+  },
+  profile: {
+    backgroundColor: '#F0F0F0',
+    width: '80%',
+    marginHorizontal: 40,
+    margin: 10,
+    padding: 10,
+    borderRadius: 20,
+    alignItems: 'center',
+
+    elevation: 10,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 5,
+      height: 2,
+    },
+    shadowOpacity: 10.25,
+    shadowRadius: 10.84,
+  },
+
+  listcontainer: {
+    flexDirection: 'row',
+  },
+
+  imagestyle: {
+    margin: 5,
+    marginRight: 20,
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+  },
+  iconposition: {
+    flexDirection: 'row',
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    marginRight: 10,
+  },
+  iconaling: {
+    marginLeft: 5,
+  },
+  underlinestyle: {
+    borderBottomColor: '#CED4BE',
+    borderBottomWidth: 1,
+    margin: 2,
+  },
 });
-export default MainPage
+export default MainPage;
