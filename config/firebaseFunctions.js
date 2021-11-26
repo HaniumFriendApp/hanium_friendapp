@@ -14,6 +14,7 @@ export async function registration(nickName, email, password, navigation) {
     });
     Alert.alert('회원가입 성공!', '로그인 페이지로 넘어갑니다');
     await AsyncStorage.setItem('session', email);
+    await AsyncStorage.setItem('user', currentUser.uid);
     navigation.push('TabNavigator');
   } catch (err) {
     Alert.alert('무슨 문제가 있는 것 같아요! => ', err.message);
@@ -24,6 +25,7 @@ export async function signIn(email, password, navigation) {
   try {
     await firebase.auth().signInWithEmailAndPassword(email, password);
     await AsyncStorage.setItem('session', email);
+    await AsyncStorage.setItem('user', currentUser.uid);
     navigation.push('TabNavigator');
   } catch (err) {
     Alert.alert('로그인에 문제가 있습니다! ', err.message);
@@ -35,10 +37,58 @@ export async function logout(navigation) {
     console.log('로그아웃!!');
     const currentUser = firebase.auth().currentUser;
     await AsyncStorage.removeItem('session');
+    await AsyncStorage.removeItem('user');
     await firebase.auth().signOut();
     navigation.push('SignInPage');
   } catch (err) {
     Alert.alert('로그 아웃에 문제가 있습니다! ', err.message);
+  }
+}
+
+export async function DeleteUser(navigation, content) {
+  try {
+    const auth = getAuth();
+    const user = auth.currentUser;
+    const db = firebase.firestore();
+    await db
+      .collection('signOutDetail')
+      .doc(content.date + 'D')
+      .set(content);
+    console.log('탈퇴1');
+    await AsyncStorage.removeItem('session');
+    console.log('탈퇴2!');
+    deleteUser(user)
+      .then(() => {
+        // User deleted.
+      })
+      .catch((error) => {
+        // An error ocurred
+        // ...
+      });
+    await currentUser.delete();
+    console.log('탈퇴3');
+    await db.collection('users').doc(currentUser.uid).delete();
+    console.log('탈퇴4');
+
+    Alert.alert('회원탈퇴 성공!! 로그인 페이지로 돌아갑니다...');
+    navigation.push('SignInPage');
+  } catch (err) {
+    Alert.alert('회원탈퇴에 문제가 있습니다! ', err.message);
+  }
+}
+
+export async function getUser(setUser) {
+  try {
+    console.log('현재 사용자 정보 가져옴!');
+    const currentUser = firebase.auth().currentUser;
+    console.log('1');
+    const user = await currentUser.email;
+    console.log('2');
+    setUser(user);
+    console.log('3');
+    return user;
+  } catch (err) {
+    Alert.alert('현재 사용자 정보를 가져오는데 문제가 있습니다! ', err.message);
   }
 }
 
