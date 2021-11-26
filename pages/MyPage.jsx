@@ -52,13 +52,19 @@ export default function MyPage({ navigation }) {
         >
           <Text style={styles.item2Text}>정보수정</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.item2}>
+        <TouchableOpacity
+          style={styles.item2}
+          onPress={() => navigation.navigate('SignDeletePage')}
+        >
           <Text style={styles.item2Text}>탈퇴</Text>
         </TouchableOpacity>
         <View style={styles.item1}>
           <Text style={styles.item1Text}>알림</Text>
         </View>
-        <TouchableOpacity style={styles.item2}>
+        <TouchableOpacity
+          style={styles.item2}
+          onPress={() => navigation.navigate('AlarmPage')}
+        >
           <Text style={styles.item2Text}>알림 설정</Text>
         </TouchableOpacity>
         <View style={styles.item1}>

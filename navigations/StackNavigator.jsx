@@ -15,9 +15,12 @@ import WriteQuestion from '../pages/WriteQuestion';
 import FindIdPage from '../pages/FindIdPage';
 import CalendarPage from '../pages/CalendarPage';
 import ChatPage from '../pages/ChatPage';
+import ChatDetailPage from '../pages/ChatDetailPage';
 import FaceChatPage from '../pages/FaceChatPage';
 import FriendAddPage from '../pages/FriendAddPage';
 import MainPage from '../pages/MainPage';
+import SignDeletePage from '../pages/SignDeletePage';
+import AlarmPage from '../pages/AlarmPage';
 //스택 네비게이션 라이브러리가 제공해주는 여러 기능이 담겨있는 객체를 사용합니다
 //그래서 이렇게 항상 상단에 선언하고 시작하는게 규칙입니다!
 const Stack = createStackNavigator();
@@ -46,8 +49,11 @@ const StackNavigator = () => {
       <Stack.Screen name="FindIdPage" component={FindIdPage} />
       <Stack.Screen name="CalendarPage" component={CalendarPage} />
       <Stack.Screen name="ChatPage" component={ChatPage} />
+      <Stack.Screen name="ChatDetailPage" component={ChatDetailPage} />
       <Stack.Screen name="FaceChatPage" component={ChatPage} />
       <Stack.Screen name="FriendAddPage" component={FriendAddPage} />
+      <Stack.Screen name="SignDeletePage" component={SignDeletePage} />
+      <Stack.Screen name="AlarmPage" component={AlarmPage} />
     </Stack.Navigator>
   );
 };
