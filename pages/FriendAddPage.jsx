@@ -15,7 +15,9 @@ import Constants from 'expo-constants';
 import Icon from 'react-native-vector-icons/AntDesign';
 
 const databaseURL = 'https://friendadd-72871-default-rtdb.firebaseio.com/';
-const userimage = { uri: 'https://reactnative.dev/img/tiny_logo.png' };
+const userimage = {
+  uri: 'https://cdn.pixabay.com/photo/2018/05/26/18/06/dog-3431913__340.jpg',
+};
 class FriendAddPage extends React.Component {
   constructor() {
     super();

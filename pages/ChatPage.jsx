@@ -42,7 +42,7 @@ const Messages = [
     id: '1',
     userName: 'Hey Mama',
     userImg: {
-      uri: 'https://www.urbanbrush.net/web/wp-content/uploads/edd/2019/01/urbanbrush-20190108131811238895.png',
+      uri: 'https://cdn.pixabay.com/photo/2016/10/10/14/13/dog-1728494__340.png',
     },
     messageTime: '4 mins ago',
     messageText:
@@ -52,7 +52,7 @@ const Messages = [
     id: '2',
     userName: 'Nan Goyangee',
     userImg: {
-      uri: 'https://www.urbanbrush.net/web/wp-content/uploads/edd/2019/04/urbanbrush-20190408073012983262.png',
+      uri: 'https://cdn.pixabay.com/photo/2018/07/16/15/31/dog-3542195__340.png',
     },
     messageTime: '2 hours ago',
     messageText:
@@ -62,7 +62,7 @@ const Messages = [
     id: '3',
     userName: 'Chris Mas',
     userImg: {
-      uri: 'https://image.shutterstock.com/image-vector/illustration-vector-cute-little-dog-260nw-1844885809.jpg',
+      uri: 'https://cdn.pixabay.com/photo/2016/05/30/13/52/dog-1424758__340.png',
     },
     messageTime: '1 hours ago',
     messageText:
@@ -72,7 +72,7 @@ const Messages = [
     id: '4',
     userName: 'Pizza Hot',
     userImg: {
-      uri: 'https://www.urbanbrush.net/web/wp-content/uploads/edd/2020/06/urbanbrush-20200615000825087215.jpg',
+      uri: 'https://cdn.pixabay.com/photo/2017/09/05/23/07/dog-2719601__340.jpg',
     },
     messageTime: '1 day ago',
     messageText:
@@ -82,7 +82,7 @@ const Messages = [
     id: '5',
     userName: 'Gogo Ring',
     userImg: {
-      uri: 'https://www.urbanbrush.net/web/wp-content/uploads/edd/2018/06/web-20180628122647540654.png',
+      uri: 'https://cdn.pixabay.com/photo/2012/04/16/11/18/dog-35553__340.png',
     },
     messageTime: '2 days ago',
     messageText:
@@ -92,7 +92,7 @@ const Messages = [
     id: '6',
     userName: 'Mamma Mia',
     userImg: {
-      uri: 'https://i.pinimg.com/474x/22/48/0e/22480e75030c2722a99858b14c0d6e02--akita-shiba-inu.jpg',
+      uri: 'https://cdn.pixabay.com/photo/2017/10/03/00/29/low-poly-2810932__340.png',
     },
     messageTime: '2 days ago',
     messageText:
@@ -102,7 +102,7 @@ const Messages = [
     id: '7',
     userName: 'Lala Bla',
     userImg: {
-      uri: 'https://thumb.ac-illust.com/t/27/27a6465d3eceeffc0a386cb7e405eed5_t.jpeg',
+      uri: 'https://cdn.pixabay.com/photo/2017/01/31/18/46/corgi-2026347__340.png',
     },
     messageTime: '2 days ago',
     messageText:
@@ -112,7 +112,7 @@ const Messages = [
     id: '8',
     userName: 'Hula hup',
     userImg: {
-      uri: 'https://i.pinimg.com/originals/65/92/62/659262d2cf8b5236b78533af369dd453.jpg',
+      uri: 'https://cdn.pixabay.com/photo/2017/07/05/14/34/dog-2474784__340.jpg',
     },
     messageTime: '2 days ago',
     messageText:
@@ -122,7 +122,7 @@ const Messages = [
     id: '59',
     userName: 'Dog Lover',
     userImg: {
-      uri: 'https://www.urbanbrush.net/web/wp-content/uploads/edd/2018/06/web-20180628135732577075.png',
+      uri: 'https://cdn.pixabay.com/photo/2017/11/22/16/04/pug-2970825__340.png',
     },
     messageTime: '2 days ago',
     messageText:
@@ -132,7 +132,7 @@ const Messages = [
     id: '10',
     userName: 'Very Pepi',
     userImg: {
-      uri: 'https://www.urbanbrush.net/web/wp-content/uploads/edd/2018/12/urbanbrush-20181210151216523437.png',
+      uri: 'https://cdn.pixabay.com/photo/2018/03/30/02/30/color-dogs-3274248__340.png',
     },
     messageTime: '2 days ago',
     messageText:
@@ -142,7 +142,7 @@ const Messages = [
     id: '11',
     userName: 'Gon Dola',
     userImg: {
-      uri: 'https://image.freepik.com/free-vector/cute-poodle-dog-illustration-designs_98765-7.jpg',
+      uri: 'https://cdn.pixabay.com/photo/2015/02/13/16/40/doggy-635410__340.png',
     },
     messageTime: '2 days ago',
     messageText:
@@ -152,7 +152,7 @@ const Messages = [
     id: '12',
     userName: 'Lets Dance',
     userImg: {
-      uri: 'https://littledeep.com/wp-content/uploads/2020/12/illustration-poodle-main-1024x607.png',
+      uri: 'https://cdn.pixabay.com/photo/2018/10/10/10/56/dog-3736945__340.jpg',
     },
     messageTime: '2 days ago',
     messageText:
