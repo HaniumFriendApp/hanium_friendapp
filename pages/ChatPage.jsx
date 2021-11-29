@@ -40,7 +40,7 @@ import { Title } from 'react-native-paper';
 const Messages = [
   {
     id: '1',
-    userName: 'Jenny Doe',
+    userName: 'Hey Mama',
     userImg: {
       uri: 'https://www.urbanbrush.net/web/wp-content/uploads/edd/2019/01/urbanbrush-20190108131811238895.png',
     },
@@ -50,7 +50,7 @@ const Messages = [
   },
   {
     id: '2',
-    userName: 'John Doe',
+    userName: 'Nan Goyangee',
     userImg: {
       uri: 'https://www.urbanbrush.net/web/wp-content/uploads/edd/2019/04/urbanbrush-20190408073012983262.png',
     },
@@ -60,9 +60,9 @@ const Messages = [
   },
   {
     id: '3',
-    userName: 'Ken William',
+    userName: 'Chris Mas',
     userImg: {
-      uri: 'https://www.urbanbrush.net/web/wp-content/uploads/edd/2019/04/urbanbrush-20190408073012983262.png',
+      uri: 'https://image.shutterstock.com/image-vector/illustration-vector-cute-little-dog-260nw-1844885809.jpg',
     },
     messageTime: '1 hours ago',
     messageText:
@@ -70,9 +70,9 @@ const Messages = [
   },
   {
     id: '4',
-    userName: 'Selina Paul',
+    userName: 'Pizza Hot',
     userImg: {
-      uri: 'https://www.urbanbrush.net/web/wp-content/uploads/edd/2019/04/urbanbrush-20190408073012983262.png',
+      uri: 'https://www.urbanbrush.net/web/wp-content/uploads/edd/2020/06/urbanbrush-20200615000825087215.jpg',
     },
     messageTime: '1 day ago',
     messageText:
@@ -80,9 +80,9 @@ const Messages = [
   },
   {
     id: '5',
-    userName: 'Christy Alex',
+    userName: 'Gogo Ring',
     userImg: {
-      uri: 'https://www.urbanbrush.net/web/wp-content/uploads/edd/2019/04/urbanbrush-20190408073012983262.png',
+      uri: 'https://www.urbanbrush.net/web/wp-content/uploads/edd/2018/06/web-20180628122647540654.png',
     },
     messageTime: '2 days ago',
     messageText:
@@ -90,9 +90,9 @@ const Messages = [
   },
   {
     id: '6',
-    userName: 'Christy Alex',
+    userName: 'Mamma Mia',
     userImg: {
-      uri: 'https://www.urbanbrush.net/web/wp-content/uploads/edd/2019/04/urbanbrush-20190408073012983262.png',
+      uri: 'https://i.pinimg.com/474x/22/48/0e/22480e75030c2722a99858b14c0d6e02--akita-shiba-inu.jpg',
     },
     messageTime: '2 days ago',
     messageText:
@@ -100,9 +100,9 @@ const Messages = [
   },
   {
     id: '7',
-    userName: 'Christy Alex',
+    userName: 'Lala Bla',
     userImg: {
-      uri: 'https://www.urbanbrush.net/web/wp-content/uploads/edd/2019/04/urbanbrush-20190408073012983262.png',
+      uri: 'https://thumb.ac-illust.com/t/27/27a6465d3eceeffc0a386cb7e405eed5_t.jpeg',
     },
     messageTime: '2 days ago',
     messageText:
@@ -110,9 +110,9 @@ const Messages = [
   },
   {
     id: '8',
-    userName: 'Christy Alex',
+    userName: 'Hula hup',
     userImg: {
-      uri: 'https://www.urbanbrush.net/web/wp-content/uploads/edd/2019/04/urbanbrush-20190408073012983262.png',
+      uri: 'https://i.pinimg.com/originals/65/92/62/659262d2cf8b5236b78533af369dd453.jpg',
     },
     messageTime: '2 days ago',
     messageText:
@@ -120,9 +120,9 @@ const Messages = [
   },
   {
     id: '59',
-    userName: 'Christy Alex',
+    userName: 'Dog Lover',
     userImg: {
-      uri: 'https://www.urbanbrush.net/web/wp-content/uploads/edd/2019/04/urbanbrush-20190408073012983262.png',
+      uri: 'https://www.urbanbrush.net/web/wp-content/uploads/edd/2018/06/web-20180628135732577075.png',
     },
     messageTime: '2 days ago',
     messageText:
@@ -130,9 +130,9 @@ const Messages = [
   },
   {
     id: '10',
-    userName: 'Christy Alex',
+    userName: 'Very Pepi',
     userImg: {
-      uri: 'https://www.urbanbrush.net/web/wp-content/uploads/edd/2019/04/urbanbrush-20190408073012983262.png',
+      uri: 'https://www.urbanbrush.net/web/wp-content/uploads/edd/2018/12/urbanbrush-20181210151216523437.png',
     },
     messageTime: '2 days ago',
     messageText:
@@ -140,9 +140,9 @@ const Messages = [
   },
   {
     id: '11',
-    userName: 'Christy Alex',
+    userName: 'Gon Dola',
     userImg: {
-      uri: 'https://www.urbanbrush.net/web/wp-content/uploads/edd/2019/04/urbanbrush-20190408073012983262.png',
+      uri: 'https://image.freepik.com/free-vector/cute-poodle-dog-illustration-designs_98765-7.jpg',
     },
     messageTime: '2 days ago',
     messageText:
@@ -150,9 +150,9 @@ const Messages = [
   },
   {
     id: '12',
-    userName: 'Christy Alex',
+    userName: 'Lets Dance',
     userImg: {
-      uri: 'https://www.urbanbrush.net/web/wp-content/uploads/edd/2019/04/urbanbrush-20190408073012983262.png',
+      uri: 'https://littledeep.com/wp-content/uploads/2020/12/illustration-poodle-main-1024x607.png',
     },
     messageTime: '2 days ago',
     messageText:

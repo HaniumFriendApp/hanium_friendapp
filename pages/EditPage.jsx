@@ -30,10 +30,10 @@ import {
 } from 'react-native-gesture-handler';
 
 export default function EditPage({ navigation }) {
-  const [id, setID] = useState('qwer1234');
+  const [id, setID] = useState('한이음');
   const [idError, setIDError] = useState('');
 
-  const [nickName, setNickName] = useState('qwer1234');
+  const [nickName, setNickName] = useState('한이음');
   const [nickNameError, setNickNameError] = useState('');
 
   const [password, setPassword] = useState('qwer1234');

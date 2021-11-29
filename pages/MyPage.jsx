@@ -22,7 +22,7 @@ import CardComponent from '../components/CardComponent';
 import ImageComponent from '../components/ImageComponent';
 import HeaderComponent from '../components/HeaderComponent';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-const my = require('../assets/my.png');
+const my = require('../assets/dog.jpg');
 
 const imageWidth = Dimensions.get('window').width / 3;
 import { logout } from '../config/firebaseFunctions';
@@ -39,7 +39,7 @@ export default function MyPage({ navigation }) {
     <Container>
       <View style={styles.header}>
         <Thumbnail large source={my} style={styles.thumbnail} />
-        <Text style={styles.nameText}>Name</Text>
+        <Text style={styles.nameText}>한이음</Text>
       </View>
       {/* <HeaderComponent /> */}
       <Content>

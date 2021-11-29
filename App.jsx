@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, YellowBox } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
 import StackNavigator from './navigations/StackNavigator';
@@ -13,6 +13,8 @@ import Loading from './pages/Loading';
 import * as firebase from 'firebase';
 //파이어베이스 접속 키값 가져오기
 import apiKeys from './config/key';
+
+console.disableYellowBox = true;
 
 export default function App() {
   const [ready, setReady] = useState(true);
