@@ -14,3 +14,6 @@
 -AlarmPage.jsx, ChatPage,jsx, ChadDetailPage.jsx, SignDeletePage.jsx 추가 및 수정
 </li>
 
+<시작 시>
+
+터미널에 npm install react-native-gifted-chat --save  을 작성해 주세요
